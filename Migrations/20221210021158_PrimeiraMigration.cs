@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DesafioVendasClientes.Migrations
 {
-    public partial class Initial : Migration
+    public partial class PrimeiraMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -59,42 +59,18 @@ namespace DesafioVendasClientes.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClienteProduto",
-                columns: table => new
-                {
-                    ClientesClienteID = table.Column<int>(type: "int", nullable: false),
-                    ProdutosProdutoID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClienteProduto", x => new { x.ClientesClienteID, x.ProdutosProdutoID });
-                    table.ForeignKey(
-                        name: "FK_ClienteProduto_Clientes_ClientesClienteID",
-                        column: x => x.ClientesClienteID,
-                        principalTable: "Clientes",
-                        principalColumn: "ClienteID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ClienteProduto_Produtos_ProdutosProdutoID",
-                        column: x => x.ProdutosProdutoID,
-                        principalTable: "Produtos",
-                        principalColumn: "ProdutoID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProdutoVenda",
                 columns: table => new
                 {
-                    ProdutoID = table.Column<int>(type: "int", nullable: false),
+                    ProdutosProdutoID = table.Column<int>(type: "int", nullable: false),
                     VendasVendaID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProdutoVenda", x => new { x.ProdutoID, x.VendasVendaID });
+                    table.PrimaryKey("PK_ProdutoVenda", x => new { x.ProdutosProdutoID, x.VendasVendaID });
                     table.ForeignKey(
-                        name: "FK_ProdutoVenda_Produtos_ProdutoID",
-                        column: x => x.ProdutoID,
+                        name: "FK_ProdutoVenda_Produtos_ProdutosProdutoID",
+                        column: x => x.ProdutosProdutoID,
                         principalTable: "Produtos",
                         principalColumn: "ProdutoID",
                         onDelete: ReferentialAction.Cascade);
@@ -105,11 +81,6 @@ namespace DesafioVendasClientes.Migrations
                         principalColumn: "VendaID",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ClienteProduto_ProdutosProdutoID",
-                table: "ClienteProduto",
-                column: "ProdutosProdutoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProdutoVenda_VendasVendaID",
@@ -124,9 +95,6 @@ namespace DesafioVendasClientes.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ClienteProduto");
-
             migrationBuilder.DropTable(
                 name: "ProdutoVenda");
 

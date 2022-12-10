@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesafioVendasClientes.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20221208210020_Initial")]
-    partial class Initial
+    [Migration("20221210021158_PrimeiraMigration")]
+    partial class PrimeiraMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,21 +20,6 @@ namespace DesafioVendasClientes.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("ClienteProduto", b =>
-                {
-                    b.Property<int>("ClientesClienteID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProdutosProdutoID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ClientesClienteID", "ProdutosProdutoID");
-
-                    b.HasIndex("ProdutosProdutoID");
-
-                    b.ToTable("ClienteProduto");
-                });
 
             modelBuilder.Entity("DesafioVendasClientes.Models.Cliente", b =>
                 {
@@ -106,38 +91,23 @@ namespace DesafioVendasClientes.Migrations
 
             modelBuilder.Entity("ProdutoVenda", b =>
                 {
-                    b.Property<int>("ProdutoID")
+                    b.Property<int>("ProdutosProdutoID")
                         .HasColumnType("int");
 
                     b.Property<int>("VendasVendaID")
                         .HasColumnType("int");
 
-                    b.HasKey("ProdutoID", "VendasVendaID");
+                    b.HasKey("ProdutosProdutoID", "VendasVendaID");
 
                     b.HasIndex("VendasVendaID");
 
                     b.ToTable("ProdutoVenda");
                 });
 
-            modelBuilder.Entity("ClienteProduto", b =>
-                {
-                    b.HasOne("DesafioVendasClientes.Models.Cliente", null)
-                        .WithMany()
-                        .HasForeignKey("ClientesClienteID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DesafioVendasClientes.Models.Produto", null)
-                        .WithMany()
-                        .HasForeignKey("ProdutosProdutoID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("DesafioVendasClientes.Models.Venda", b =>
                 {
                     b.HasOne("DesafioVendasClientes.Models.Cliente", "Cliente")
-                        .WithMany()
+                        .WithMany("Vendas")
                         .HasForeignKey("ClienteID");
 
                     b.Navigation("Cliente");
@@ -147,7 +117,7 @@ namespace DesafioVendasClientes.Migrations
                 {
                     b.HasOne("DesafioVendasClientes.Models.Produto", null)
                         .WithMany()
-                        .HasForeignKey("ProdutoID")
+                        .HasForeignKey("ProdutosProdutoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -156,6 +126,11 @@ namespace DesafioVendasClientes.Migrations
                         .HasForeignKey("VendasVendaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DesafioVendasClientes.Models.Cliente", b =>
+                {
+                    b.Navigation("Vendas");
                 });
 #pragma warning restore 612, 618
         }

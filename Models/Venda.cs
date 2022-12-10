@@ -9,7 +9,7 @@ namespace DesafioVendasClientes.Models
     {
         public int VendaID { get; set; }
         public Cliente Cliente { get; set; }
-        public ICollection<Produto> Produto { get; set; }
+        public virtual List<Produto> Produtos { get; set; }
         public int QtdProduto { get; set; }
         public float VlrUnitarioProduto { get; set; }
         public DateTime DtHoraVenda { get; set; }

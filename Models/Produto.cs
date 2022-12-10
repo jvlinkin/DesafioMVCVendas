@@ -10,8 +10,7 @@ namespace DesafioVendasClientes.Models
         public int ProdutoID { get; set; }
         public string Desc_Produto { get; set; }
         public float Vlr_Unitario { get; set; }
-        public ICollection<Cliente> Clientes { get; set; }
-        public ICollection<Venda> Vendas { get; set; }
+        public virtual List<Venda> Vendas { get; set; }
 
 
 

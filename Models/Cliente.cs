@@ -10,8 +10,8 @@ namespace DesafioVendasClientes.Models
         public int ClienteID { get; set; }
         public string NomeCliente { get; set; }
         public string Cidade { get; set; }
+        public List<Venda> Vendas { get; set; }
 
-        public ICollection<Produto> Produtos { get; set; }
 
     }
 }
