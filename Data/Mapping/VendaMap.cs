@@ -21,9 +21,9 @@ namespace DesafioVendasClientes.Data.Mapping
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
 
-            builder.Property(p=>p.VlrUnitarioProduto)
-                .HasColumnType("int")
-                .IsRequired();
+            builder.Property(p => p.VlrUnitarioProduto)
+                .HasColumnType("decimal(18,2)");
+                
 
             builder.Property(p => p.DtHoraVenda)
                 .HasColumnType("datetime");

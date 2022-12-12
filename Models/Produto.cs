@@ -8,7 +8,7 @@ namespace DesafioVendasClientes.Models
     public class Produto
     {
         public int ProdutoID { get; set; }
-        public string Desc_Produto { get; set; }
+        public string Descricao { get; set; }
         public float Vlr_Unitario { get; set; }
         public virtual List<Venda> Vendas { get; set; }
 

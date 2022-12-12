@@ -13,13 +13,13 @@ namespace DesafioVendasClientes.Data
         {
             
             modelBuilder.ApplyConfiguration(new VendaMap());
-            modelBuilder.ApplyConfiguration(new ClienteMap());
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ProdutoMap());
             
             
         }
 
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
     }

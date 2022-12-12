@@ -14,7 +14,7 @@ namespace DesafioVendasClientes.Data.Mapping
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
             builder.ToTable("Produtos");
-            builder.Property(p => p.Desc_Produto)
+            builder.Property(p => p.Descricao)
                 .HasColumnType("varchar(200)")
                 .IsRequired();
 
