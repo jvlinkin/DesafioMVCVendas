@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesafioVendasClientes.Models
 {
-    public class Usuario
+    public class CadastrarUsuarioModel
     {
         public int UsuarioID { get; set; }
         [Required(ErrorMessage = "Digite o nome do usuário")]
@@ -18,6 +18,11 @@ namespace DesafioVendasClientes.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "Digite a senha")]
         public string Senha { get; set; }
+
+        [Required(ErrorMessage = "Confirme a senha do usuário.")]
+        [Compare("Senha", ErrorMessage = "As senhas não conferem.")]
+        public string ConfirmarSenha { get; set; }
+        
         [Required(ErrorMessage = "Selecione o perfil do usuário")]
         public PerfilEnum Perfil { get; set; }
         public List<Venda> Vendas { get; set; }

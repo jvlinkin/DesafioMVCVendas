@@ -384,3 +384,4 @@ C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debu
 C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\scopedcss\bundle\DesafioVendasClientes.styles.css
 C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\Razor\Views\Login\CadastrarUsuario.cshtml.g.cs
+C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs
