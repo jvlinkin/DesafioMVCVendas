@@ -1,4 +1,5 @@
 using DesafioVendasClientes.Data;
+using DesafioVendasClientes.Repositório;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ namespace DesafioVendasClientes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
+            services.AddScoped<ICadastrarUsuarioRepositorio, CadastrarUsuarioRepositorio>();
             services.AddControllersWithViews();
         }
 
