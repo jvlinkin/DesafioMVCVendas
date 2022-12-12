@@ -380,8 +380,7 @@ C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debu
 C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\DesafioVendasClientes.pdb
 C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\DesafioVendasClientes.genruntimeconfig.cache
 C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\DesafioVendasClientes.csproj.AssemblyReference.cache
-C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\staticwebassets\DesafioVendasClientes.StaticWebAssets.Pack.cache
-C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.DesafioVendasClientes.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.DesafioVendasClientes.props
-C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.DesafioVendasClientes.props
-C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.DesafioVendasClientes.props
+C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\staticwebassets\DesafioVendasClientes.StaticWebAssets.xml
+C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\scopedcss\bundle\DesafioVendasClientes.styles.css
+C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\jvlpa\source\repos\DesafioVendasClientes\DesafioVendasClientes\obj\Debug\netcoreapp3.1\Razor\Views\Login\CadastrarUsuario.cshtml.g.cs
