@@ -10,22 +10,22 @@ namespace DesafioVendasClientes.Models
     public class CadastrarUsuarioModel
     {
         public int UsuarioID { get; set; }
-        [Required(ErrorMessage = "Digite o nome do usuário")]
+        [Required(ErrorMessage = "Nome de usuário inválido.")]
         public string Nome { get; set; }
-        [Required(ErrorMessage = "Digite a data de nascimento")]
+        [Required(ErrorMessage = "Data de nascimento inválida.")]
         public DateTime Data_Nascimento { get; set; }
-        [Required(ErrorMessage = "Digite o email")]
+        [Required(ErrorMessage = "Email inválido.")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Digite a senha")]
+        [Required(ErrorMessage = "Senha inválida.")]
         public string Senha { get; set; }
 
-        [Required(ErrorMessage = "Confirme a senha do usuário.")]
-        [Compare("Senha", ErrorMessage = "As senhas não conferem.")]
+        [Required(ErrorMessage = "Confirmação de senha inválida..")]
+        [Compare("Senha", ErrorMessage = "As senhas não conferem. Favor verificar.")]
         public string ConfirmarSenha { get; set; }
         
-        [Required(ErrorMessage = "Selecione o perfil do usuário")]
+        [Required(ErrorMessage = "Perfil de usuário inválido.")]
         public PerfilEnum Perfil { get; set; }
-        public List<Venda> Vendas { get; set; }
+        
 
 
     }

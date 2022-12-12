@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DesafioVendasClientes.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,26 @@ namespace DesafioVendasClientes.Controllers
         public IActionResult CadastrarUsuario()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult CadastrarUsuario(CadastrarUsuarioModel cadastrarUsuarioModel)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(cadastrarUsuarioModel);
+                }
+                TempData["SuccessMessage"] = "Usuário cadastrado com sucesso";
+                return RedirectToAction("Index", "Login");
+
+            }
+            catch (Exception erro)
+            {
+                TempData["ErrorMessage"] = $"Ops, ocorreu um erro. Detalhes do erro: {erro}";
+                return RedirectToAction("CadastrarUsuario");
+            }
+
         }
     }
 }
